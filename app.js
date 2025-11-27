@@ -2,6 +2,15 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3001;
 
+app.get("/", (req, res) => res.type('html').send(html)); 
+
+// Add a new route for the health endpoint 
+
+app.get("/health", (req, res) => { 
+
+  res.sendStatus(200); 
+
+}); 
 app.get("/", (req, res) => res.type('html').send(html));
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
@@ -58,4 +67,3 @@ const html = `
     </section>
   </body>
 </html>
-`
